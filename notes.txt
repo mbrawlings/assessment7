@@ -1,0 +1,32 @@
+doublerAppend vs. doublerInsert @ extraLargeArray
+
+--The doublerAppend function is WAY faster.
+
+Results for the tinyArray
+insert 27.763 μs
+append 12.254 μs
+Results for the smallArray
+insert 9.265 μs
+append 6.451 μs
+Results for the mediumArray
+insert 1.17495 ms
+append 1.048034 ms
+Results for the largeArray
+insert 6.250876 ms
+append 226.962 μs
+Results for the extraLargeArray
+insert 884.309592 ms
+append 4.430177 ms
+
+--As you can see in the above results, the doublerAppend scales much better
+--than the doublerInsert function does. You can tell by how little the times
+--are increasing with the larger array. The doublerInsert function on the other
+--hand does not scale well. You can tell because of how long the runtime gets
+--as the array increases in size.
+
+Extra Credit
+
+--The doublerInsert function takes so much longer because it uses the unshift
+--method. This requires each element in the array to have to shift a space each
+--time a new number is 'unshifted' into the array. The push method just adds the
+--new number to the end without having to shift all of the contents.
